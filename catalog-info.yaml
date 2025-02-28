@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: atcw0ladx-python-gitops
+  description: This is GitOps manifest for atcw0ladx-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=atcw0ladx-python
+    backstage.io/kubernetes-id: atcw0ladx-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: atcw0ladx-python   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:atcw0ladx-python
